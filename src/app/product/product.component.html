@@ -1,0 +1,25 @@
+<mat-card class="products">
+  <mat-card-header>
+    <mat-card-title>Product Name: {{ product.ProductName }}</mat-card-title>
+    <mat-card-subtitle>Product ID: {{ product.ProductID}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{product.URL}} class="images">
+  <mat-card-content>
+    <div class="container">
+      <p>
+        Price: {{product.UnitPrice}} BGN.
+      </p>
+      <p>
+        Made on: {{product.DeliveryOn}}
+      </p>
+      <p [ngClass]="[product.UnitsInStock > 0 ? 'inStock': 'outOfStock']">
+        Units in stock: {{product.UnitsInStock}}
+      </p>
+    </div>
+    <mat-card-actions>
+      <div class="buttons">
+        <button (click)="buyProduct()" id="buyBtn">Buy</button>
+      </div>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
