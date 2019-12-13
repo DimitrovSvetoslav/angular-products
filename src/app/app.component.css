@@ -3,3 +3,8 @@
   flex-wrap: wrap;
 }
 
+h3 {
+  color: coral;
+  margin-left: 45px;
+  margin-top: 30px;
+}

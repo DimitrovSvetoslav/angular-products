@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, NgModule } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product';
 
 @Component({
@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
 
   isStock: boolean;
   @Input() product: Product;
+  @Output() productEvent = new EventEmitter<string>();
 
   ngOnInit() {
 
@@ -22,5 +23,9 @@ export class ProductComponent implements OnInit {
       alert(`You just bought ${this.product.ProductName}!`)
       this.product.UnitsInStock--;
     }
+  }
+
+  orderProduct() {
+    this.productEvent.emit(this.product.ProductName);
   }
 }
