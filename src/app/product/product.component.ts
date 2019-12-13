@@ -31,6 +31,7 @@ export class ProductComponent implements OnInit {
       alert('We do not have that product in stock, please select another one')
     } else {
       this.productEvent.emit(this.product.ProductName);
+      this.product.UnitsInStock--;
     }
   }
 }
