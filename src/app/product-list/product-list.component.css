@@ -1,0 +1,88 @@
+.products {
+    width: 350px;
+    height: 200px;
+    margin: 45px;
+    border-radius: 4%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h3 {
+    color: coral;
+    margin-left: 45px;
+    margin-top: 30px;
+}
+.delivery {
+    margin-left: 15px;
+}
+
+.addProduct {
+    float: left;
+    margin-left: 47px;
+    margin-bottom: 50px;
+}
+
+#addButton {
+    float: right;
+    position: relative;
+    background-color: chocolate;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#buyBtn {
+    background-color: chocolate;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#orderBtn {
+    background-color: darkorange;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.images {
+    border-radius: 2%;
+    height: 250px;
+}
+
+.products-header-image {
+    background-size: cover;
+}
+
+.outOfStock {
+    font-weight: bolder;
+    color: red;
+}
+
+.inStock {
+    font-weight: bold;
+    background-color: white;
+}

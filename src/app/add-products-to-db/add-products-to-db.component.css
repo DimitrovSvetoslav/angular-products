@@ -1,0 +1,28 @@
+.addForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .addForm > * {
+    width: 35%;
+  }
+
+  h3 {
+    justify-content: center;
+    display: flex;
+    color: darkcyan;
+  }
+
+  #add {
+    position: relative;
+    background-color: chocolate;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 25px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
