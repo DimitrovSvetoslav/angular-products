@@ -1,8 +1,10 @@
 import { Component, OnInit, Inject, NgModule } from '@angular/core';
 import { DataService } from './services/data.service';
 import { Product } from './models/product';
-import { ProductComponent } from './product/product.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+
+
 
 export interface DialogData {
   prodName: string;
@@ -14,16 +16,15 @@ export interface DialogData {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  products: Product[];
+  products: Observable<Product[]>;
 
   address: string;
 
-  constructor(private dataService: DataService, private dialog: MatDialog) {
-
-  }
-
+  constructor(private dataService: DataService, private dialog: MatDialog) { }
+  
   ngOnInit() {
-    this.products = this.dataService.getProducts();
+   this.products = this.dataService.getProducts().valueChanges();
+   this.dataService.getProducts().valueChanges().subscribe(prod => this.products = prod);
   }
   openDialog(prodName): void {
     const dialogRef = this.dialog.open(DialogBox, {
