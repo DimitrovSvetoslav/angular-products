@@ -1,11 +1,13 @@
-<h1 mat-dialog-title>{{data.name}}</h1>
-<div mat-dialog-content>
-    <p>What is your address?</p>
-    <mat-form-field>
-        <input matInput [(ngModel)]="data.address">
-    </mat-form-field>
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Order</button>
+<div class="dialogBox">
+    <h1 mat-dialog-title>{{data.name}}</h1>
+    <div mat-dialog-content>
+        <p>What is your address?</p>
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.address">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button class="btn btn-red" (click)="onNoClick()">Cancel</button>
+        <button mat-button class="btn btn-green" [mat-dialog-close]="data" cdkFocusInitial>Order</button>
+    </div>
 </div>

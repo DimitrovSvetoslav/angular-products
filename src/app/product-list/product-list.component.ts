@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
   }
   openDialog(product): void {
     const dialogRef = this.dialog.open(DialogBox, {
-      width: '250px',
+      width: '300px',
       data: { product: product, address: this.address }
     });
 
@@ -42,7 +42,7 @@ export interface DialogData {
 
 @Component({
   selector: 'dialog-box',
-  templateUrl: 'dialog-box.html',
+  templateUrl: 'dialog-box.html'
 })
 export class DialogBox {
 

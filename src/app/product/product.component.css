@@ -15,28 +15,6 @@
   border-radius: 4%;
 }
 
-.btn {
-  border: none;
-  color: white;
-  padding: 16px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 25px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.btn-chocolate {
-  background-color: chocolate;
-  
-}
-
-.btn-orange {
-  background-color: darkorange;
-}
-
 .images{
   border-radius: 2%;
   height: 250px;
@@ -54,8 +32,4 @@
 .inStock {
   font-weight: bold;
   background-color: white;
-}
-
-.btn-red {
-  background-color: red;
 }
