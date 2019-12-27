@@ -7,7 +7,6 @@ import { from } from 'rxjs';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent },
-  { path: 'products', component: ProductComponent },
   { path: 'add', component: AddProductsToDbComponent }
 ];
 

@@ -1,8 +1,7 @@
-import { Component, OnInit, Inject, NgModule } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Product } from '../models/product';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -11,31 +10,33 @@ import { Observable } from 'rxjs';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Observable<Product[]>;
+  products: Product[];
 
   address: string;
 
   constructor(private dataService: DataService, private dialog: MatDialog) { }
-  
+
   ngOnInit() {
-   this.products = this.dataService.getProducts().valueChanges();
-   this.dataService.getProducts().valueChanges().subscribe(prod => this.products = prod);
+    this.dataService.getProductList().subscribe(prod => {
+      this.products = prod;
+    });
   }
-  openDialog(prodName): void {
+  openDialog(product): void {
     const dialogRef = this.dialog.open(DialogBox, {
       width: '250px',
-      data: { prodName: prodName, address: this.address }
+      data: { product: product, address: this.address }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.address = result;
+      this.address = result.address;
+      this.dataService.updateProductQuantity(result.product.key, --result.product.UnitsInStock);
+      console.log(result);
     });
   }
 }
 
 export interface DialogData {
-  prodName: string;
+  product: Product;
   address: string;
 }
 
@@ -52,5 +53,4 @@ export class DialogBox {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 }

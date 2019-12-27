@@ -19,6 +19,11 @@ h3 {
     margin-left: 15px;
 }
 
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
 .addProduct {
     float: left;
     margin-left: 47px;
@@ -26,8 +31,6 @@ h3 {
 }
 
 #addButton {
-    float: right;
-    position: relative;
     background-color: chocolate;
     border: none;
     color: white;
@@ -35,54 +38,8 @@ h3 {
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin-right: 25px;
     border-radius: 8px;
+    margin-top: 20px;
+    margin-right: 70px;
     font-weight: bold;
-}
-
-#buyBtn {
-    background-color: chocolate;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-right: 25px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-#orderBtn {
-    background-color: darkorange;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-right: 25px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.images {
-    border-radius: 2%;
-    height: 250px;
-}
-
-.products-header-image {
-    background-size: cover;
-}
-
-.outOfStock {
-    font-weight: bolder;
-    color: red;
-}
-
-.inStock {
-    font-weight: bold;
-    background-color: white;
 }

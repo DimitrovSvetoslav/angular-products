@@ -5,6 +5,7 @@
   
   .addForm > * {
     width: 35%;
+    margin: 0px auto;
   }
 
   h3 {
@@ -14,7 +15,6 @@
   }
 
   #add {
-    position: relative;
     background-color: chocolate;
     border: none;
     color: white;
@@ -22,7 +22,6 @@
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin-right: 25px;
     border-radius: 8px;
     font-weight: bold;
   }

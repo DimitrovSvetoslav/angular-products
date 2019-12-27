@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../models/product';
+import { DataService } from '../services/data.service'
 
 @Component({
   selector: 'app-product',
@@ -10,7 +11,11 @@ export class ProductComponent implements OnInit {
 
   isStock: boolean;
   @Input() product: Product;
-  @Output() productEvent = new EventEmitter<string>();
+  @Output() productEvent = new EventEmitter<Product>();
+
+  constructor(private dataService: DataService) {
+
+  }
 
   ngOnInit() {
 
@@ -22,16 +27,19 @@ export class ProductComponent implements OnInit {
     } else {
       alert(`You just bought ${this.product.ProductName}!`)
       this.product.UnitsInStock--;
+      this.dataService.updateProductQuantity(this.product.key, this.product.UnitsInStock);
     }
   }
 
   orderProduct() {
-
-    if(this.product.UnitsInStock <= 0) {
+    if (this.product.UnitsInStock <= 0) {
       alert('We do not have that product in stock, please select another one')
     } else {
-      this.productEvent.emit(this.product.ProductName);
-      this.product.UnitsInStock--;
+      this.productEvent.emit(this.product);
     }
+  }
+
+  deleteProduct() {
+    this.dataService.deleteProduct(this.product.key);
   }
 }
